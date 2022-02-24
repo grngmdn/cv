@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #ccbdb7;
 }
 
 code {
@@ -13,9 +14,27 @@ code {
 }
 
 .btn {
-  background-color: blue;
+  background: transparent;
+  border-color: transparent;
+  text-transform: capitalize;
+  font-size: 1.25rem;
+  letter-spacing: 0.1rem;
+  margin: 0 0.5rem;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  padding: 0.25rem 0;
+  line-height: 1;
+  outline-color: hsl(186, 100%, 94%);
+}
+.btn:hover {
+  color: #2caeba;
+  box-shadow: 0 2px #2caeba;
+}
+.active-btn {
+  color: #2caeba;
+  box-shadow: 0 2px #2caeba;
 }
 
-.active-btn {
-  background-color: aqua;
+.job-icon {
+  color: #2caeba;
 }

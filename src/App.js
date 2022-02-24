@@ -1,3 +1,5 @@
+import { Button, Typography } from "@mui/material"
+import { Box } from "@mui/system"
 import React, { useEffect, useState } from "react"
 import { FaAngleDoubleRight } from 'react-icons/fa'
 const url = 'https://course-api.com/react-tabs-project'
@@ -28,17 +30,36 @@ function App() {
   // loading condition 
     if(loading) {
       return(
-        <h1>loading...</h1>
+        <Typography
+          variant="h1"
+        >loading...</Typography>
       )
     }
 
     const { company, dates, duties, title } = jobs[value];
 
   return (
-    <div>
-      <h1>Experience</h1>
+    <Box
+      sx={{
+        width: "100vw",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center"
+      }}
+    >
+      <Typography
+        variant="h3"
+        sx={{
+          fontWeight: "bold",
+          paddingTop: "50px",
+          paddingBottom: "50px",
+        }}
+      >
+        Experience
+      </Typography>
       {/* nav buttons */}
-      <div>
+      <Box>
         {jobs.map(
           (job, index) => {
             return(
@@ -54,22 +75,74 @@ function App() {
             )
           }
         )}
-      </div>
+      </Box>
       {/* job details  */}
-      <div>
-        <h3>{title}</h3>
-        <h4>{company}</h4>
-        <p>{dates}</p>
+      <Box
+        sx={{
+          width: "80vw",
+          paddingTop: '50px'
+        }}
+      >
+        <Typography
+          variant="h3"
+        >
+          {title}
+        </Typography>
+
+        <Typography
+          variant="h5"
+          sx={{
+            paddingTop: "15px",
+            paddingBottom: "15px"
+          }}
+        >
+          {company}
+        </Typography>
+
+        <Typography
+          variant="p"
+          color="textSecondary"
+        >
+          {dates}
+        </Typography>
+
         {/* mapping over the array of duties  */}
         {duties.map(
           (duty, index) => {
             return(
-              <p key={index}><FaAngleDoubleRight></FaAngleDoubleRight>{duty}</p>
+              <Box
+              key={index}
+              sx={{
+                display: "flex",            
+                paddingTop: "25px"
+              }}
+              >
+                <Box
+                  sx={{
+                    paddingRight: "20px",
+                    display: "flex",
+                    alignItems: "center"
+                  }}
+                >
+                  <FaAngleDoubleRight
+                    className="job-icon"
+                  >
+                  </FaAngleDoubleRight>
+                </Box>
+                <Box>
+                  <Typography
+                    variant="p"
+                  >
+                    {duty}
+                  </Typography> 
+                </Box>
+              </Box>
+
             )
           }
         )}
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 }
 
