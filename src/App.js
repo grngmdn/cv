@@ -32,7 +32,17 @@ function App() {
       return(
         <Typography
           variant="h1"
-        >loading...</Typography>
+          sx={{
+            width: "100vw",
+            height: "30vh",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center"
+          }}
+        >
+          loading...
+        </Typography>
       )
     }
 
