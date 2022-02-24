@@ -44,10 +44,10 @@ function App() {
             return(
               <button 
               key={job.id}
-              onClick={() => {
-                // making the index into state of "value" so that the site displays job details based on the buttons.
-                setValue(index)
-              }}
+              // making the index into state of "value" so that the site displays job details based on the buttons.
+              onClick={() => {setValue(index)}}
+              // changing css style class based on the active button 
+              className={`btn ${index === value && 'active-btn'}`}
               >
                 {job.company}
               </button>
